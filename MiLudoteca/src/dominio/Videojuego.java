@@ -1,7 +1,6 @@
 package dominio;
 
 public class Videojuego {
-    // REQ-01: Atributos privados
     private String titulo;
     private String plataforma;
     private int puntuacion;

@@ -1,0 +1,22 @@
+public class VideojuegoRol extends Videojuego {
+    private int numeroMisiones;
+ 
+    public VideojuegoRol(String titulo, String plataforma, double puntuacion,
+                         double horasJugadas, int numeroMisiones) {
+        super(titulo, plataforma, puntuacion, horasJugadas);
+        setNumeroMisiones(numeroMisiones);
+    }
+ 
+    public int getNumeroMisiones() { return numeroMisiones; }
+ 
+    public void setNumeroMisiones(int numeroMisiones) {
+        if (numeroMisiones >= 0) {
+            this.numeroMisiones = numeroMisiones;
+        }
+    }
+ 
+    @Override
+    public String descripcion() {
+        return super.descripcion() + " - Misiones principales: " + numeroMisiones;
+    }
+}

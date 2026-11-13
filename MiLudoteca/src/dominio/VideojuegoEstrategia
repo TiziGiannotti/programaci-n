@@ -1,4 +1,4 @@
-public class VideojuegoEstrategia extends Videojuego {
+public class VideojuegoEstrategia {
     private int numeroFacciones;
  
     public VideojuegoEstrategia(String titulo, String plataforma, double puntuacion,

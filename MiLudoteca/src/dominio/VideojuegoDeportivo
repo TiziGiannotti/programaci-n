@@ -1,0 +1,22 @@
+public class VideojuegoDeportivo extends Videojuego {
+    private String deporte;
+ 
+    public VideojuegoDeportivo(String titulo, String plataforma, double puntuacion,
+                               double horasJugadas, String deporte) {
+        super(titulo, plataforma, puntuacion, horasJugadas);
+        this.deporte = deporte;
+    }
+ 
+    public String getDeporte() { return deporte; }
+ 
+    public void setDeporte(String deporte) {
+        if (deporte != null && !deporte.isBlank()) {
+            this.deporte = deporte;
+        }
+    }
+ 
+    @Override
+    public String descripcion() {
+        return super.descripcion() + " - Deporte: " + deporte;
+    }
+}

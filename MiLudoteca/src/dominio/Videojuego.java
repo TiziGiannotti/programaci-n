@@ -1,76 +1,45 @@
 package dominio;
-
 public class Videojuego {
-    private String titulo;
-    private String plataforma;
-    private int puntuacion;
-    private int horasJugadas;
-    public Videojuego(String titulo, String plataforma, int puntuacion, int horasJugadas) {
-        setTitulo(titulo);
-        setPlataforma(plataforma);
-        setPuntuacion(puntuacion);
-        setHorasJugadas(horasJugadas);
-    }
-    public String getTitulo() {
-        return titulo;
-    }
-    public void setTitulo(String titulo) {
-        if (titulo != null && !titulo.trim().isEmpty()) {
-            this.titulo = titulo;
-        } else {
-            this.titulo = "Sin título";
-        }
-    }
-    public String getPlataforma() {
-        return plataforma;
-    }
-    public void setPlataforma(String plataforma) {
-        if (plataforma != null && !plataforma.trim().isEmpty()) {
-            this.plataforma = plataforma;
-        } else {
-            this.plataforma = "Desconocida";
-        }
-    }
-    public int getPuntuacion() {
-        return puntuacion;
-    }
-    public void setPuntuacion(int puntuacion) {
-        if (puntuacion >= 0 && puntuacion <= 100) {
+    private final String titulo;
+    private final String plataforma;
+    private double puntuacion;
+    private double horasJugadas;
+ 
+    public Videojuego(String titulo, String plataforma, double puntuacion, double horasJugadas) {
+        this.titulo = titulo;
+        this.plataforma = plataforma;
+        if (puntuacion >= 0 && puntuacion <= 10) {
             this.puntuacion = puntuacion;
-        } else {
-            this.puntuacion = 0; // Valor seguro por defecto
         }
-    }
-    public int getHorasJugadas() {
-        return horasJugadas;
-    }
-    public void setHorasJugadas(int horasJugadas) {
         if (horasJugadas >= 0) {
             this.horasJugadas = horasJugadas;
-        } else {
-            this.horasJugadas = 0; // Evita valores negativos
         }
     }
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+ 
+    public String getTitulo() { return titulo; }
+    public String getPlataforma() { return plataforma; }
+    public double getPuntuacion() { return puntuacion; }
+    public double getHorasJugadas() { return horasJugadas; }
+ 
+    public void setPuntuacion(double puntuacion) {
+        if (puntuacion >= 0 && puntuacion <= 10) {
+            this.puntuacion = puntuacion;
         }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
+    }
+ 
+    public void setHorasJugadas(double horasJugadas) {
+        if (horasJugadas >= 0) {
+            this.horasJugadas = horasJugadas;
         }
-        Videojuego otro = (Videojuego) obj;
-        return titulo.equals(otro.titulo) && plataforma.equals(otro.plataforma);
     }
-    @Override
-    public int hashCode() {
-        return 31 * titulo.hashCode() + plataforma.hashCode();
+ 
+    public String descripcion() {
+        return titulo + " (" + plataforma + ") - Puntuación: " + puntuacion
+                + " - Horas jugadas: " + horasJugadas;
     }
+ 
     @Override
     public String toString() {
-        return "Videojuego: " + titulo + 
-               " | Plataforma: " + plataforma + 
-               " | Puntuación: " + puntuacion + "/100" + 
-               " | Horas: " + horasJugadas + "h";
+        return descripcion();
     }
 }

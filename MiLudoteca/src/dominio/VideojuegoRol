@@ -1,4 +1,4 @@
-public class VideojuegoRol extends Videojuego {
+public class VideojuegoRol {
     private int numeroMisiones;
  
     public VideojuegoRol(String titulo, String plataforma, double puntuacion,

@@ -1,4 +1,4 @@
-public class VideojuegoDeportivo extends Videojuego {
+public class VideojuegoDeportivo {
     private String deporte;
  
     public VideojuegoDeportivo(String titulo, String plataforma, double puntuacion,

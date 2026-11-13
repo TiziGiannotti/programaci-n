@@ -1,4 +1,4 @@
-public class VideojuegoOnline extends Videojuego {
+public class VideojuegoOnline {
     private int numeroJugadoresOnline;
  
     public VideojuegoOnline(String titulo, String plataforma, double puntuacion,

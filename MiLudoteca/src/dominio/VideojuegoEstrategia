@@ -1,0 +1,22 @@
+public class VideojuegoEstrategia extends Videojuego {
+    private int numeroFacciones;
+ 
+    public VideojuegoEstrategia(String titulo, String plataforma, double puntuacion,
+                                double horasJugadas, int numeroFacciones) {
+        super(titulo, plataforma, puntuacion, horasJugadas);
+        setNumeroFacciones(numeroFacciones);
+    }
+ 
+    public int getNumeroFacciones() { return numeroFacciones; }
+ 
+    public void setNumeroFacciones(int numeroFacciones) {
+        if (numeroFacciones > 0) {
+            this.numeroFacciones = numeroFacciones;
+        }
+    }
+ 
+    @Override
+    public String descripcion() {
+        return super.descripcion() + " - Facciones: " + numeroFacciones;
+    }
+}

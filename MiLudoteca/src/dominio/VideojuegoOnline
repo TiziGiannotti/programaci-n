@@ -1,20 +1,22 @@
-public class VideojuegoOnline {
+package dominio;
+
+public class VideojuegoOnline extends Videojuego {
     private int numeroJugadoresOnline;
- 
+
     public VideojuegoOnline(String titulo, String plataforma, double puntuacion,
                             double horasJugadas, int numeroJugadoresOnline) {
         super(titulo, plataforma, puntuacion, horasJugadas);
         setNumeroJugadoresOnline(numeroJugadoresOnline);
     }
- 
+
     public int getNumeroJugadoresOnline() { return numeroJugadoresOnline; }
- 
+
     public void setNumeroJugadoresOnline(int numeroJugadoresOnline) {
         if (numeroJugadoresOnline > 0) {
             this.numeroJugadoresOnline = numeroJugadoresOnline;
         }
     }
- 
+
     @Override
     public String descripcion() {
         return super.descripcion() + " - Máx. jugadores simultáneos: " + numeroJugadoresOnline;
